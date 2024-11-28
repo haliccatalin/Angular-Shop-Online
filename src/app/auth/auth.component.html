@@ -26,14 +26,28 @@
     <mat-card-content>
       <div class="input-container">
         <mat-form-field appearance="fill" class="input-field">
-          <mat-label>user name</mat-label>
-          <input matInput placeholder="Popescu" [formControl]="userName" required>
-          <mat-error *ngIf="userName.invalid">{{getErrorEmailMessage()}}</mat-error>
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="Popescu" [formControl]="name" required>
+          <mat-error *ngIf="name.invalid">{{getErrorEmailMessage()}}</mat-error>
         </mat-form-field>
       </div>
       <div class="input-container">
         <mat-form-field appearance="fill" class="input-field">
-          <mat-label> Email</mat-label>
+          <mat-label>Phone</mat-label>
+          <input matInput placeholder="0751022332" [formControl]="phone" required>
+          <mat-error *ngIf="phone.invalid">{{getErrorEmailMessage()}}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="input-container">
+        <mat-form-field appearance="fill" class="input-field">
+          <mat-label>Address</mat-label>
+          <input matInput placeholder="Str. Victoriei" [formControl]="address" required>
+          <mat-error *ngIf="address.invalid">{{getErrorEmailMessage()}}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="input-container">
+        <mat-form-field appearance="fill" class="input-field">
+          <mat-label>Email</mat-label>
           <input matInput placeholder="pat@example.com" [formControl]="email" required>
           <mat-error *ngIf="email.invalid">{{getErrorEmailMessage()}}</mat-error>
         </mat-form-field>

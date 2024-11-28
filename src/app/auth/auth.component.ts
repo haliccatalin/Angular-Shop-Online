@@ -12,9 +12,11 @@ import {UserService} from "../services/user.service";
 export class AuthComponent {
   viewType = "login";
   email = new FormControl('', [Validators.required, Validators.email]);
-  userName = new FormControl('', [Validators.required]);
+  name = new FormControl('', [Validators.required]);
   password = new FormControl('', [Validators.required]);
   retypePassword = new FormControl('', [Validators.required]);
+  address = new FormControl('', [Validators.required]);
+  phone = new FormControl('', [Validators.required]);
 
   constructor(private router: Router, private authService: AuthService, private userService: UserService) {
   }
@@ -52,7 +54,7 @@ export class AuthComponent {
   }
 
   onRegister(): void {
-    this.authService.register(this.email.getRawValue()!, this.password.getRawValue()!, this.userName.getRawValue()!, this.retypePassword.getRawValue()!).subscribe((response: any) => {
+    this.authService.register(this.email.getRawValue()!, this.password.getRawValue()!, this.name.getRawValue()!, this.phone.getRawValue()!, this.address.getRawValue()!).subscribe((response: any) => {
       console.log(response);
       alert(response.message);
       this.viewType = "login";
